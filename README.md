@@ -3,8 +3,17 @@ Magento 2 Product Questions extension is an awesome module for Magento 2.
 It allows Customer or Guest to submit questions and answers for the product on the product detail page.
 
 ## Highlight features for for Product Questions
+update soon.
+
+## 1. Documentation
+
+- [Installation guide](https://ecomteck.com/magento-2-tutorials/install-magento-2-extension/)
+- [Download from our Live site](https://ecomteck.com/downloads/magento-2-product-questions-and-answers/)
+- [Get Free Support](https://ecomteck.com/ask-question/)
+- [Get Custom Work](https://ecomteck.com/contact)
 
 ### Backend
+update soon.
 
 #### Configuration
 - Allowing setting Guests and Customers to Write Question or Answer.
@@ -23,7 +32,7 @@ It allows Customer or Guest to submit questions and answers for the product on t
 
 ## Introduction installation:
 
-### 1 - Installation Magento 2 Product Questions extension
+### 2 - Installation Magento 2 Product Questions extension
 #### Manual Installation
 Install Product Questions extension for Magento2
  * Download the extension
@@ -52,3 +61,20 @@ composer require ecomteck/module-product-questions
 
 ## ScreenShots
 update soon.
+
+## Conclusion
+Magento 2 Product Questions extension is an awesome module for Magento 2. 
+It allows Customer or Guest to submit questions and answers for the product on the product detail page.
+
+**People also search:**
+- magento 2 product questions
+- product questions and answer
+- product questions for magento 2
+- questions and answer on product page
+- faq
+- ecomteck product questions
+- magento 2 extensions
+
+**Other free extension on Github**
+- [Magento 2 Order Comments](https://github.com/ecomteck/magento2-order-comments)
+- [Magento 2 Social Login](https://github.com/ecomteck/magento-2-social-login)

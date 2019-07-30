@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ecomteck
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Ecomteck.com license that is
+ * available through the world-wide-web at this URL:
+ * https://ecomteck.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Ecomteck
+ * @package     Ecomteck_ProductQuestions
+ * @copyright   Copyright (c) 2018 Ecomteck (https://ecomteck.com/)
+ * @license     https://ecomteck.com/LICENSE.txt
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ecomteck_ProductQuestions::menus" title="Product Questions" module="Ecomteck_ProductQuestions" sortOrder="200" parent="Magento_Backend::marketing" resource="Ecomteck_ProductQuestions::menus"/>
+        <add id="Ecomteck_ProductQuestions::question" title="Questions" translate="title" module="Ecomteck_ProductQuestions" sortOrder="10" parent="Ecomteck_ProductQuestions::menus" action="product_questions/question" resource="Ecomteck_ProductQuestions::question"/>
+        <add id="Ecomteck_ProductQuestions::answer" title="Answers" translate="title" module="Ecomteck_ProductQuestions" sortOrder="20" parent="Ecomteck_ProductQuestions::menus" action="product_questions/answer" resource="Ecomteck_ProductQuestions::answer"/>
+    </menu>
+</config>

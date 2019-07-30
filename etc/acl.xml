@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ecomteck
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ecomteck.com license that is
+ * available through the world-wide-web at this URL:
+ * https://ecomteck.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Ecomteck
+ * @package     Ecomteck_ProductQuestions
+ * @copyright   Copyright (c) 2019 Ecomteck (https://ecomteck.com/)
+ * @license     https://ecomteck.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Ecomteck_ProductQuestions::menus" title="Ecomteck Menus">
+                    <resource id="Ecomteck_ProductQuestions::question" title="Questions" translate="title" sortOrder="10">
+                        <resource id="Ecomteck_ProductQuestions::question_save" title="Save Question" translate="title" sortOrder="10" />
+                        <resource id="Ecomteck_ProductQuestions::question_delete" title="Delete Question" translate="title" sortOrder="20" />
+                    </resource>
+                    <resource id="Ecomteck_ProductQuestions::answer" title="Answers" translate="title" sortOrder="10">
+                        <resource id="Ecomteck_ProductQuestions::answer_save" title="Save Answer" translate="title" sortOrder="10" />
+                        <resource id="Ecomteck_ProductQuestions::answer_delete" title="Delete Answer" translate="title" sortOrder="20" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

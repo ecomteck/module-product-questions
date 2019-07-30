@@ -1,0 +1,55 @@
+<?php
+/**
+ * Ecomteck
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ecomteck.com license that is
+ * available through the world-wide-web at this URL:
+ * https://ecomteck.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Ecomteck
+ * @package     Ecomteck_ProductQuestions
+ * @copyright   Copyright (c) 2019 Ecomteck (https://ecomteck.com/)
+ * @license     https://ecomteck.com/LICENSE.txt
+ *
+ */
+
+/** @var $block \Ecomteck\ProductQuestions\Block\Customer\Recent */
+?>
+
+<?php if ($block->getQuestions() && count($block->getQuestions())): ?>
+<div class="block block-questions-dashboard">
+    <div class="block-title">
+        <strong><?php /* @escapeNotVerified */ echo __('My Recent Questions') ?></strong>
+        <a class="action view" href="<?php /* @escapeNotVerified */ echo $block->getAllQuestionsUrl() ?>"><span><?php /* @escapeNotVerified */ echo __('View All') ?></span></a>
+    </div>
+    <div class="block-content">
+        <table>
+            <thead>
+                <tr>
+                    <th><?php echo __('Created'); ?></th>
+                    <th><?php echo __('Product Name'); ?></th>
+                    <th><?php echo __('Title'); ?></th>
+                    <th><?php echo __('Status'); ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($block->getQuestions() as $question): ?>
+                <tr>
+                    <td><?php /* @escapeNotVerified */ echo $block->dateFormat($question->getQuestionCreatedAt()); ?></td>
+                    <td><a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($question->getEntityPkValue()); ?>"><?php echo $block->escapeHtml($question->getProductName()); ?></a></td>
+                    <td><?php echo $block->escapeHtml($block->truncateString($question->getQuestionDetail())); ?></td>
+                    <td><?php echo $this->helper('Ecomteck\ProductQuestions\Helper\Data')->getStatusText($question->getQuestionStatusId()); ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<?php endif; ?>

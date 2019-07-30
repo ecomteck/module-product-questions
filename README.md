@@ -1,20 +1,8 @@
 # Magento 2 Product Questions
 Magento 2 Product Questions extension is an awesome module for Magento 2. 
 It allows Customer or Guest to submit questions and answers for the product on the product detail page.
-
 ## Highlight features for for Product Questions
-update soon.
-
-## 1. Documentation
-
-- [Installation guide](https://ecomteck.com/magento-2-tutorials/install-magento-2-extension/)
-- [Download from our Live site](https://ecomteck.com/downloads/magento-2-product-questions-and-answers/)
-- [Get Free Support](https://ecomteck.com/ask-question/)
-- [Get Custom Work](https://ecomteck.com/contact)
-
 ### Backend
-update soon.
-
 #### Configuration
 - Allowing setting Guests and Customers to Write Question or Answer.
 - Allowing setting Questions per Page on List Default Value
@@ -30,9 +18,16 @@ update soon.
 - Displaying the list of questions and answers for the product on the product detail page
 - Displaying the list of questions and answer on my product questions page.
 
-## Introduction installation:
+## 1. Documentation
 
-### 2 - Installation Magento 2 Product Questions extension
+- [Installation guide](https://ecomteck.com/magento-2-tutorials/install-magento-2-extension/)
+- [Download from our Live site](https://ecomteck.com/downloads/magento-2-product-questions/)
+- [Get Free Support](https://ecomteck.com/ask-question/)
+- [Get Custom Work](https://ecomteck.com/contact)
+
+## 2. Introduction installation:
+
+### 2.1 - Installation Magento 2 Product Questions extension
 #### Manual Installation
 Install Product Questions extension for Magento2
  * Download the extension
@@ -48,21 +43,21 @@ composer require ecomteck/module-product-questions
 
 ```
 
-### 2 - Enable And Install the extension
+### 2.2 - Enable And Install the extension
  * php bin/magento module:enable Ecomteck_ProductQuestions
  * php bin/magento setup:upgrade
  * php bin/magento cache:clean
  * php bin/magento setup:static-content:deploy
 
-### 3 - See results
+### 2.3 - See results
 - Going to the product detail page on frontend, at product tab you can see a tab Question.
 - Administrator go to Marketing ->Product Questions to see the Questions and Answers management
 - Stores -> Configuration -> Catalog -> Product Questions to see the configurations of extension.
 
-## ScreenShots
+## 3. ScreenShots
 update soon.
 
-## Conclusion
+## 4. Conclusion
 Magento 2 Product Questions extension is an awesome module for Magento 2. 
 It allows Customer or Guest to submit questions and answers for the product on the product detail page.
 
@@ -73,6 +68,7 @@ It allows Customer or Guest to submit questions and answers for the product on t
 - questions and answer on product page
 - faq
 - ecomteck product questions
+- ecomteck extensions
 - magento 2 extensions
 
 **Other free extension on Github**

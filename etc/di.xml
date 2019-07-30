@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ecomteck
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ecomteck.com license that is
+ * available through the world-wide-web at this URL:
+ * https://ecomteck.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Ecomteck
+ * @package     Ecomteck_ProductQuestions
+ * @copyright   Copyright (c) 2019 Ecomteck (https://ecomteck.com/)
+ * @license     https://ecomteck.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="product_questions_question_listing_data_source" xsi:type="string">Ecomteck\ProductQuestions\Model\ResourceModel\Question\Grid\Collection</item>
+                <item name="product_questions_answer_listing_data_source" xsi:type="string">Ecomteck\ProductQuestions\Model\ResourceModel\Answer\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!--Questions-->
+    <preference for="Ecomteck\ProductQuestions\Api\Data\QuestionSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+    <preference for="Ecomteck\ProductQuestions\Api\Data\QuestionInterface" type="Ecomteck\ProductQuestions\Model\Question" />
+    <preference for="Ecomteck\ProductQuestions\Api\QuestionRepositoryInterface" type="Ecomteck\ProductQuestions\Model\QuestionRepository" />
+
+    <type name="Ecomteck\ProductQuestions\Model\ResourceModel\Question\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">ecomteck_product_questions</argument>
+            <argument name="eventPrefix" xsi:type="string">product_questions_question_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">question_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Ecomteck\ProductQuestions\Model\ResourceModel\Question</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Ecomteck\ProductQuestions\Model\Api\SearchCriteria\CollectionProcessor\QuestionFilterProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor">
+        <arguments>
+            <argument name="customFilters" xsi:type="array">
+                <item name="store_view_id" xsi:type="object">Ecomteck\ProductQuestions\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\QuestionStoreFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Ecomteck\ProductQuestions\Model\Api\SearchCriteria\QuestionCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="filters" xsi:type="object">Ecomteck\ProductQuestions\Model\Api\SearchCriteria\CollectionProcessor\QuestionFilterProcessor</item>
+                <item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Ecomteck\ProductQuestions\Model\QuestionRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Ecomteck\ProductQuestions\Model\Api\SearchCriteria\QuestionCollectionProcessor</argument>
+        </arguments>
+    </type>
+
+    <!--Answer-->
+    <preference for="Ecomteck\ProductQuestions\Api\Data\AnswerSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+    <preference for="Ecomteck\ProductQuestions\Api\Data\AnswerInterface" type="Ecomteck\ProductQuestions\Model\Answer" />
+    <preference for="Ecomteck\ProductQuestions\Api\AnswerRepositoryInterface" type="Ecomteck\ProductQuestions\Model\AnswerRepository" />
+
+    <type name="Ecomteck\ProductQuestions\Model\ResourceModel\Answer\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">ecomteck_product_answers</argument>
+            <argument name="eventPrefix" xsi:type="string">product_questions_answer_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">answer_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Ecomteck\ProductQuestions\Model\ResourceModel\Answer</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Ecomteck\ProductQuestions\Model\Api\SearchCriteria\AnswerCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Ecomteck\ProductQuestions\Model\AnswerRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Ecomteck\ProductQuestions\Model\Api\SearchCriteria\AnswerCollectionProcessor</argument>
+        </arguments>
+    </type>
+</config>

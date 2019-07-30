@@ -1,0 +1,42 @@
+<?php
+/**
+ * Ecomteck
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the ecomteck.com license that is
+ * available through the world-wide-web at this URL:
+ * https://ecomteck.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Ecomteck
+ * @package     Ecomteck_ProductQuestions
+ * @copyright   Copyright (c) 2019 Ecomteck (https://ecomteck.com/)
+ * @license     https://ecomteck.com/LICENSE.txt
+ *
+ * @var $block \Ecomteck\ProductQuestions\Block\Product\Question
+ */
+?>
+
+<div id="product-question-container" data-role="product-question"></div>
+<?php echo $block->getChildHtml(); ?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Ecomteck_ProductQuestions/js/process-questions": {
+                "productQuestionUrl": "<?php /* @escapeNotVerified */ echo $block->getProductQuestionUrl();?>"
+            }
+        },
+        "#product-question-container": {
+            "Ecomteck_ProductQuestions/js/process-like-dislike": {
+                "likeDislikeUrl": "<?php /* @escapeNotVerified */ echo $block->getLikeDislikeUrl();?>",
+                "loadingNumberImage": "<?php echo $block->getViewFileUrl('Ecomteck_ProductQuestions::images/loading-number.gif'); ?>"
+            }
+        }
+    }
+</script>

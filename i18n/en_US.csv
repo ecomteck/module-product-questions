@@ -1,0 +1,142 @@
+"Save Question","Save Question"
+"New Question","New Question"
+"Question Details","Question Details"
+Product,Product
+Status,Status
+Store,Store
+"User type","User type"
+Visibility,Visibility
+Question,Question
+"Author name","Author name"
+"Author email","Author email"
+Likes,Likes
+Dislikes,Dislikes
+Back,Back
+"Delete Answer","Delete Answer"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+Save,Save
+"Save & Close","Save & Close"
+Previous,Previous
+"Save and Previous","Save and Previous"
+"Save and Next","Save and Next"
+Next,Next
+"Delete Question","Delete Question"
+"Edit Review '%1'","Edit Review '%1'"
+"<a href=""%1"" onclick=""this.target='blank'"">%2 %3</a> <a href=""mailto:%4"">(%4)</a>","<a href=""%1"" onclick=""this.target='blank'"">%2 %3</a> <a href=""mailto:%4"">(%4)</a>"
+Administrator,Administrator
+Guest,Guest
+Author,Author
+"Question Detail","Question Detail"
+"Author Name","Author Name"
+"Author Email","Author Email"
+ID,ID
+Name,Name
+"Product Store Name","Product Store Name"
+SKU,SKU
+Price,Price
+Quantity,Quantity
+Websites,Websites
+"Questions %1","Questions %1"
+Questions,Questions
+"The answer has been deleted.","The answer has been deleted."
+"We can't find a answer to delete.","We can't find a answer to delete."
+"Product Answers","Product Answers"
+"Manage Answers","Manage Answers"
+"This answer no longer exists.","This answer no longer exists."
+"Edit Answer","Edit Answer"
+"New Answer","New Answer"
+Answers,Answers
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"You saved the answer.","You saved the answer."
+"Something went wrong while saving the answer.","Something went wrong while saving the answer."
+"The question has been deleted.","The question has been deleted."
+"We can't find a question to delete.","We can't find a question to delete."
+"Product Questions","Product Questions"
+"Manage Questions","Manage Questions"
+"This question no longer exists.","This question no longer exists."
+"Edit Question","Edit Question"
+"We can't retrieve the product ID.","We can't retrieve the product ID."
+"You saved the question.","You saved the question."
+"Something went wrong while saving the question.","Something went wrong while saving the question."
+"My Product Questions","My Product Questions"
+"You are the man","You are the man"
+"Invalid Form Key.","Invalid Form Key."
+"You submitted your %1 for moderation.","You submitted your %1 for moderation."
+"You are not allowed to write the question for this product.","You are not allowed to write the question for this product."
+"You are not allowed to answer the question.","You are not allowed to answer the question."
+"You submitted your %1 successfully.","You submitted your %1 successfully."
+"We can't post your %1 right now.","We can't post your %1 right now."
+"The storage key wasn't set. Add the storage key and try again.","The storage key wasn't set. Add the storage key and try again."
+"Could not save the answer: %1","Could not save the answer: %1"
+"The answer with the ""%1"" ID doesn't exist.","The answer with the ""%1"" ID doesn't exist."
+"Could not delete the answer: %1","Could not delete the answer: %1"
+at,at
+"Could not save the question: %1","Could not save the question: %1"
+"The question with the ""%1"" ID doesn't exist.","The question with the ""%1"" ID doesn't exist."
+"Could not delete the question: %1","Could not delete the question: %1"
+"The question ID is ""%1"" no longer exists.","The question ID is ""%1"" no longer exists."
+Pending,Pending
+Approved,Approved
+"Not Approved","Not Approved"
+"--Please Select--","--Please Select--"
+Customer,Customer
+"""%1"" is not a valid email address.","""%1"" is not a valid email address."
+"""%1"" is required.","""%1"" is required."
+"""%1"" is not a valid number.","""%1"" is not a valid number."
+"%1 is not a valid %2.","%1 is not a valid %2."
+Visible,Visible
+"Not Visible","Not Visible"
+Edit,Edit
+Delete,Delete
+"Delete %1","Delete %1"
+"Are you sure you want to delete a %1 record?","Are you sure you want to delete a %1 record?"
+Created,Created
+"Product Name","Product Name"
+"Answered by","Answered by"
+on,on
+Like,Like
+Dislike,Dislike
+"Our administrator will reply your question soon.","Our administrator will reply your question soon."
+"You have submitted no questions.","You have submitted no questions."
+"My Recent Questions","My Recent Questions"
+"View All","View All"
+Title,Title
+"Write Your Own Question","Write Your Own Question"
+"Question Rules","Question Rules"
+Cancel,Cancel
+"Submit Question","Submit Question"
+"Only registered users can write questions. Please <a href=""%1"">Sign in</a> or <a href=""%2"">create an account</a>","Only registered users can write questions. Please <a href=""%1"">Sign in</a> or <a href=""%2"">create an account</a>"
+"Sending Information","Sending Information"
+"Submit Answer","Submit Answer"
+"Write Your Own Answer","Write Your Own Answer"
+"Full Name","Full Name"
+required,required
+Email,Email
+"Email to get feedback","Email to get feedback"
+"Customer Questions","Customer Questions"
+"Asked by","Asked by"
+Reply,Reply
+"Our administrator will reply %1's question soon.","Our administrator will reply %1's question soon."
+"Load more","Load more"
+"Save Answer","Save Answer"
+"General Configuration","General Configuration"
+"Allow Guests to Write Questions","Allow Guests to Write Questions"
+"Allow Guests to Answer the Question","Allow Guests to Answer the Question"
+"Allow Customers to Write Questions","Allow Customers to Write Questions"
+"Allow Customers to Answer the Question","Allow Customers to Answer the Question"
+"Auto approval new question","Auto approval new question"
+"Auto approval new answer","Auto approval new answer"
+"Questions per Page on List Default Value","Questions per Page on List Default Value"
+"Must be a numeric and within the valid range 1-20","Must be a numeric and within the valid range 1-20"
+"Question Rules Page","Question Rules Page"
+"The URL of the question rules page.","The URL of the question rules page."
+"Answer Contents","Answer Contents"
+"Answer Detail","Answer Detail"
+"For Question","For Question"
+"-- Please Select --","-- Please Select --"
+"Created By","Created By"
+"User Type","User Type"
+"Add New Answer","Add New Answer"
+"Are you sure you want to delete selected items?","Are you sure you want to delete selected items?"
+"Delete items","Delete items"
+"Add New Question","Add New Question"

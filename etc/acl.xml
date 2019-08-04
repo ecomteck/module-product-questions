@@ -24,14 +24,23 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Ecomteck_ProductQuestions::menus" title="Ecomteck Menus">
-                    <resource id="Ecomteck_ProductQuestions::question" title="Questions" translate="title" sortOrder="10">
-                        <resource id="Ecomteck_ProductQuestions::question_save" title="Save Question" translate="title" sortOrder="10" />
-                        <resource id="Ecomteck_ProductQuestions::question_delete" title="Delete Question" translate="title" sortOrder="20" />
+                <resource id="Magento_Backend::marketing">
+                    <resource id="Ecomteck_ProductQuestions::menus" title="Product Questions">
+                        <resource id="Ecomteck_ProductQuestions::question" title="Questions" translate="title" sortOrder="10">
+                            <resource id="Ecomteck_ProductQuestions::question_save" title="Save Question" translate="title" sortOrder="10" />
+                            <resource id="Ecomteck_ProductQuestions::question_delete" title="Delete Question" translate="title" sortOrder="20" />
+                        </resource>
+                        <resource id="Ecomteck_ProductQuestions::answer" title="Answers" translate="title" sortOrder="10">
+                            <resource id="Ecomteck_ProductQuestions::answer_save" title="Save Answer" translate="title" sortOrder="10" />
+                            <resource id="Ecomteck_ProductQuestions::answer_delete" title="Delete Answer" translate="title" sortOrder="20" />
+                        </resource>
                     </resource>
-                    <resource id="Ecomteck_ProductQuestions::answer" title="Answers" translate="title" sortOrder="10">
-                        <resource id="Ecomteck_ProductQuestions::answer_save" title="Save Answer" translate="title" sortOrder="10" />
-                        <resource id="Ecomteck_ProductQuestions::answer_delete" title="Delete Answer" translate="title" sortOrder="20" />
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Ecomteck_ProductQuestions::configuration" title="Product Question Configuration" />
+                        </resource>
                     </resource>
                 </resource>
             </resource>

@@ -47,7 +47,7 @@
             <updateUrl path="mui/index/render"/>
         </settings>
         <aclResource>Ecomteck_ProductQuestions::answer</aclResource>
-        <dataProvider class="Ecomteck\ProductQuestions\Ui\Component\DataProvider" name="product_questions_answer_listing_data_source">
+        <dataProvider class="Ecomteck\ProductQuestions\Ui\DataProvider\AnswerDataProvider" name="product_questions_answer_listing_data_source">
             <settings>
                 <requestFieldName>answer_id</requestFieldName>
                 <primaryFieldName>answer_id</primaryFieldName>

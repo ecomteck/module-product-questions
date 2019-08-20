@@ -124,7 +124,7 @@ class ListView extends \Magento\Framework\View\Element\Template
         /** @var \Magento\Framework\DataObjectFactory $dataObjectFactory */
         $questionData = $this->dataObjectFactory->create()
             ->setId($question->getQuestionId())
-            ->setProductId($question->getEntityPkValue())
+            ->setProductId($question->getProductId())
             ->setTitle(nl2br($question->getQuestionDetail()))
             ->setAuthorName(ucwords(strtolower($question->getQuestionAuthorName())))
             ->setFirstCharacter(substr($question->getQuestionAuthorName(), 0, 1))

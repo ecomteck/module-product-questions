@@ -175,13 +175,13 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \Ecomte
     }
 
     /**
-     * Get entity pk value (product id)
+     * Get product id
      *
      * @return int
      */
-    public function getEntityPkValue()
+    public function getProductId()
     {
-        return $this->getData(self::ENTITY_PK_VALUE);
+        return $this->getData(self::PRODUCT_ID);
     }
 
     /**
@@ -348,14 +348,14 @@ class Question extends \Magento\Framework\Model\AbstractModel implements \Ecomte
     }
 
     /**
-     * Set entity pk value (product id)
+     * Set product id
      *
-     * @param int $entityPkValue
+     * @param int $productId
      * @return \Ecomteck\ProductQuestions\Api\Data\QuestionInterface
      */
-    public function setEntityPkValue($entityPkValue)
+    public function setProductId($productId)
     {
-        return $this->setData(self::ENTITY_PK_VALUE, $entityPkValue);
+        return $this->setData(self::PRODUCT_ID, $productId);
     }
 
     /**

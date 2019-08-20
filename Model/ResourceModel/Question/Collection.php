@@ -33,11 +33,28 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     protected $_idFieldName = 'question_id';
 
     /**
+     * Event prefix
+     *
+     * @var string
+     */
+    protected $_eventPrefix = 'ecomteck_product_questions_collection';
+
+    /**
+     * Event object
+     *
+     * @var string
+     */
+    protected $_eventObject = 'product_questions_collection';
+
+    /**
      * Define resource model.
      */
     protected function _construct()
     {
-        $this->_init(\Ecomteck\ProductQuestions\Model\Question::class, \Ecomteck\ProductQuestions\Model\ResourceModel\Question::class);
+        $this->_init(
+            \Ecomteck\ProductQuestions\Model\Question::class,
+            \Ecomteck\ProductQuestions\Model\ResourceModel\Question::class
+        );
     }
 
     /**
@@ -103,7 +120,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     public function addStatusFilter($status)
     {
-        $this->addFieldToFilter('question_status_id',  $status);
+        $this->addFieldToFilter('question_status_id', $status);
         return $this;
     }
 
@@ -130,15 +147,13 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
         $this->getSelect()->joinLeft(
             ['shared' => $this->getTable('ecomteck_product_questions_sharing')],
             'main_table.question_id = shared.question_id',
-            ['entity_pk_value']
+            ['product_id']
         )->orWhere(
-            'shared.entity_pk_value = ?',
+            'shared.product_id = ?',
             $productId
         )->group(
             'main_table.question_id'
         );
-
-        // $this->printLogQuery(true);
 
         return $this;
     }
@@ -176,7 +191,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     {
         $this->getSelect()->joinLeft(
             ['product' => $this->getTable('catalog_product_entity_varchar')],
-            'main_table.entity_pk_value = product.entity_id',
+            'main_table.product_id = product.entity_id',
             ['product.value as product_name']
         )->where(
             'product.attribute_id = ?',
@@ -186,4 +201,3 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
         return $this;
     }
 }
-

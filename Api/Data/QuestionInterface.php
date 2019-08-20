@@ -44,7 +44,7 @@ interface QuestionInterface
     const QUESTION_DISLIKES      = 'question_dislikes';
     const TOTAL_ANSWERS          = 'total_answers';
     const PENDING_ANSWERS        = 'pending_answers';
-    const ENTITY_PK_VALUE        = 'entity_pk_value';
+    const PRODUCT_ID             = 'product_id';
     const QUESTION_CREATED_BY    = 'question_created_by';
     const QUESTION_CREATED_AT    = 'question_created_at';
     /**#@-*/
@@ -141,11 +141,11 @@ interface QuestionInterface
     public function getPendingAnswers();
 
     /**
-     * Get entity pk value (product id)
+     * Get product id
      *
      * @return int
      */
-    public function getEntityPkValue();
+    public function getProductId();
 
     /**
      * Get question created by
@@ -266,12 +266,12 @@ interface QuestionInterface
     public function setPendingAnswers($pendingAnswers);
 
     /**
-     * Set entity pk value (product id)
+     * Set product id
      *
-     * @param int $entityPkValue
+     * @param int $productId
      * @return \Ecomteck\ProductQuestions\Api\Data\QuestionInterface
      */
-    public function setEntityPkValue($entityPkValue);
+    public function setProductId($productId);
 
     /**
      * Set question created by

@@ -173,7 +173,7 @@
             </settings>
         </column>
 
-        <column name="entity_pk_value" sortOrder="60" class="Ecomteck\ProductQuestions\Ui\Component\Listing\Column\Product">
+        <column name="product_id" sortOrder="60" class="Ecomteck\ProductQuestions\Ui\Component\Listing\Column\Product">
             <settings>
                 <filter>text</filter>
                 <label translate="true">Product</label>

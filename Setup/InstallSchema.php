@@ -43,6 +43,15 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
         $installer = $setup;
         $installer->startSetup();
 
+        //Drop tables if exist
+        $installer->getConnection()->dropTable($installer->getTable('ecomteck_product_questions_sharing'));
+        $installer->getConnection()->dropTable($installer->getTable('ecomteck_product_questions_status'));
+        $installer->getConnection()->dropTable($installer->getTable('ecomteck_product_questions_store'));
+        $installer->getConnection()->dropTable($installer->getTable('ecomteck_product_questions_user_type'));
+        $installer->getConnection()->dropTable($installer->getTable('ecomteck_product_questions_visibility'));
+        $installer->getConnection()->dropTable($installer->getTable('ecomteck_product_answers'));
+        $installer->getConnection()->dropTable($installer->getTable('ecomteck_product_questions'));
+
         /**
          * Create table 'ecomteck_product_questions_status'
          */
@@ -193,7 +202,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
             ['unsigned' => true, 'nullable' => false, 'default' => 0],
             'Total number of pending answers'
         )->addColumn(
-            'entity_pk_value',
+            'product_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
             null,
             ['unsigned' => true, 'nullable' => false],
@@ -268,11 +277,11 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
         )->addForeignKey(
             $installer->getFkName(
                 'ecomteck_product_questions',
-                'entity_pk_value',
+                'product_id',
                 'catalog_product_entity',
                 'entity_id'
             ),
-            'entity_pk_value',
+            'product_id',
             $installer->getTable('catalog_product_entity'),
             'entity_id',
             \Magento\Framework\DB\Ddl\Table::ACTION_NO_ACTION
@@ -501,7 +510,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
         $table = $installer->getConnection()->newTable(
             $installer->getTable('ecomteck_product_questions_sharing')
         )->addColumn(
-            'entity_pk_value',
+            'product_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
             null,
             ['unsigned' => true, 'nullable' => false],
@@ -515,11 +524,11 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
         )->addForeignKey(
             $installer->getFkName(
                 'ecomteck_product_questions_sharing',
-                'entity_pk_value',
+                'product_id',
                 'catalog_product_entity',
                 'entity_id'
             ),
-            'entity_pk_value',
+            'product_id',
             $installer->getTable('catalog_product_entity'),
             'entity_id',
             \Magento\Framework\DB\Ddl\Table::ACTION_CASCADE

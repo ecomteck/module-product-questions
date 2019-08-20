@@ -33,11 +33,28 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     protected $_idFieldName = 'answer_id';
 
     /**
+     * Event prefix
+     *
+     * @var string
+     */
+    protected $_eventPrefix = 'ecomteck_product_answer_collection';
+
+    /**
+     * Event object
+     *
+     * @var string
+     */
+    protected $_eventObject = 'product_answer_collection';
+
+    /**
      * Define resource model.
      */
     protected function _construct()
     {
-        $this->_init(\Ecomteck\ProductQuestions\Model\Answer::class, \Ecomteck\ProductQuestions\Model\ResourceModel\Answer::class);
+        $this->_init(
+            \Ecomteck\ProductQuestions\Model\Answer::class,
+            \Ecomteck\ProductQuestions\Model\ResourceModel\Answer::class
+        );
     }
 
     /**
@@ -48,7 +65,11 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     public function addStatusFilter($status)
     {
-        $this->addFilter('answer_status_id', $this->getConnection()->quoteInto('main_table.answer_status_id=?', $status), 'string');
+        $this->addFilter(
+            'answer_status_id',
+            $this->getConnection()->quoteInto('main_table.answer_status_id=?', $status),
+            'string'
+        );
         return $this;
     }
 
@@ -60,7 +81,11 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     public function addVisibilityFilter($visibility)
     {
-        $this->addFilter('answer_visibility_id', $this->getConnection()->quoteInto('main_table.answer_visibility_id=?', $visibility), 'string');
+        $this->addFilter(
+            'answer_visibility_id',
+            $this->getConnection()->quoteInto('main_table.answer_visibility_id=?', $visibility),
+            'string'
+        );
         return $this;
     }
 }

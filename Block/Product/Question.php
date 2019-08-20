@@ -129,7 +129,7 @@ class Question extends Template implements IdentityInterface
         $collection = $this->questionCollectionFactory->create()->addStoreFilter(
             ['0', $this->_storeManager->getStore()->getId()]
         )->addFieldToFilter(
-            'main_table.entity_pk_value', $this->getProductId()
+            'main_table.product_id', $this->getProductId()
         )->addStatusFilter(
             \Ecomteck\ProductQuestions\Model\Status::STATUS_APPROVED
         )->addVisibilityFilter(

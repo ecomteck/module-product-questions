@@ -111,7 +111,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
     protected function _prepareForm()
     {
         $question = $this->_coreRegistry->registry('product_questions_data');
-        $product = $this->_productFactory->create()->load($question->getEntityPkValue());
+        $product = $this->_productFactory->create()->load($question->getProductId());
 
         /** @var \Magento\Framework\Data\Form $form */
         $form = $this->_formFactory->create(

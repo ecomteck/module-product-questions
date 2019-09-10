@@ -150,7 +150,7 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
                 if (!empty($productId)) {
                     $data = [
                         'question_id' => $questionId,
-                        'entity_pk_value' => $productId
+                        'product_id' => $productId
                     ];
                     $adapter->insertOnDuplicate($this->getTable('ecomteck_product_questions_sharing'), $data);
                 }
@@ -171,12 +171,12 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
         if ($questionId) {
             $question = $this->getConnection()
                 ->select()
-                ->from($this->getTable('ecomteck_product_questions'), ['entity_pk_value'])
+                ->from($this->getTable('ecomteck_product_questions'), ['product_id'])
                 ->where('question_id = :question_id');
-            $entityPkValue = $this->getConnection()->fetchCol($question, [':question_id' => $questionId]);
+            $productPkValue = $this->getConnection()->fetchCol($question, [':question_id' => $questionId]);
             $productId = 0;
-            if (!empty($entityPkValue)) {
-                $productId = (int) $entityPkValue[0];
+            if (!empty($productPkValue)) {
+                $productId = (int) $productPkValue[0];
             }
             $collection = $this->productCollectionFactory->create()
                 ->addAttributeToSelect('*')
@@ -184,17 +184,17 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
                 ->addAttributeToFilter('visibility', ['in' => $this->productVisibility->getVisibleInSiteIds()])
                 ->addFieldToFilter('entity_id', ['neq' => $productId])
                 ->joinField(
-                    'entity_pk_value',
+                    'product_id',
                     'ecomteck_product_questions_sharing',
-                    'entity_pk_value',
-                    'entity_pk_value=entity_id',
+                    'product_id',
+                    'product_id=entity_id',
                     'question_id='.$questionId,
                     'right'
                 )->getData();
 
             $productIds = [];
             foreach ($collection as $result) {
-                $productIds[] = $result['entity_pk_value'];
+                $productIds[] = $result['product_id'];
             }
             return $productIds;
         }
@@ -264,17 +264,17 @@ class Question extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     }
 
     /**
-     * Validate Inputs
+     * validate Values input
      *
      * @param AbstractModel $object
-     * @return this
+     * @return $this
      * @throws LocalizedException
      */
     protected function validateInputs(AbstractModel $object)
     {
         $this->validationRules->validateEmptyValue($object->getQuestionDetail(), 'Content of Question');
         $this->validationRules->validateEmptyValue($object->getQuestionAuthorName(), 'Author Name');
-        $this->validationRules->validateEmptyValue($object->getEntityPkValue(), 'Product ID');
+        $this->validationRules->validateEmptyValue($object->getProductId(), 'Product ID');
         $this->validationRules->validateEmail($object->getQuestionAuthorEmail(), 'Author Email');
         $this->validationRules->validateVisibility($object->getQuestionVisibilityId());
         $this->validationRules->validateStatus($object->getQuestionStatusId());

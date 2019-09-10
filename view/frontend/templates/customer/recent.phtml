@@ -43,7 +43,7 @@
                 <?php foreach ($block->getQuestions() as $question): ?>
                 <tr>
                     <td><?php /* @escapeNotVerified */ echo $block->dateFormat($question->getQuestionCreatedAt()); ?></td>
-                    <td><a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($question->getEntityPkValue()); ?>"><?php echo $block->escapeHtml($question->getProductName()); ?></a></td>
+                    <td><a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($question->getProductId()); ?>"><?php echo $block->escapeHtml($question->getProductName()); ?></a></td>
                     <td><?php echo $block->escapeHtml($block->truncateString($question->getQuestionDetail())); ?></td>
                     <td><?php echo $this->helper('Ecomteck\ProductQuestions\Helper\Data')->getStatusText($question->getQuestionStatusId()); ?></td>
                 </tr>

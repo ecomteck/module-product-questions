@@ -21,11 +21,14 @@
 
 namespace Ecomteck\ProductQuestions\Model;
 
+use Magento\Framework\Model\AbstractModel;
+use Ecomteck\ProductQuestions\Api\Data\AnswerInterface;
+
 /**
  * Class Answer
  * @package Ecomteck\ProductQuestions\Model
  */
-class Answer extends \Magento\Framework\Model\AbstractModel implements \Ecomteck\ProductQuestions\Api\Data\AnswerInterface
+class Answer extends AbstractModel implements AnswerInterface
 {
     /**
      * Cache tag
@@ -41,7 +44,7 @@ class Answer extends \Magento\Framework\Model\AbstractModel implements \Ecomteck
      */
     protected function _construct()
     {
-        $this->_init('Ecomteck\ProductQuestions\Model\ResourceModel\Answer');
+        $this->_init(\Ecomteck\ProductQuestions\Model\ResourceModel\Answer::class);
     }
 
     /**
@@ -299,7 +302,7 @@ class Answer extends \Magento\Framework\Model\AbstractModel implements \Ecomteck
      */
     public function setAnswerUserTypeId($answerUserTypeId)
     {
-        return $this->setData(self::ANSWER_USER_ID, $answerUserTypeId);
+        return $this->setData(self::ANSWER_USER_TYPE_ID, $answerUserTypeId);
     }
 
     /**

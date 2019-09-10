@@ -211,7 +211,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
             ]
         );
 
-        $fieldset->addField('product_id', 'hidden', ['name' => 'entity_pk_value']);
+        $fieldset->addField('product_id', 'hidden', ['name' => 'product_id']);
 
         $form->setMethod('post');
         $form->setUseContainer(true);

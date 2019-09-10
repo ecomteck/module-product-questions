@@ -136,7 +136,7 @@ class ListAjax extends \Magento\Framework\App\Action\Action
                 $collection = $this->questionCollectionFactory->create()->addStoreFilter(
                     ['0', $this->storeManager->getStore()->getId()]
                 )->addFieldToFilter(
-                    'main_table.entity_pk_value', $productId
+                    'main_table.product_id', $productId
                 )->addStatusFilter(
                     \Ecomteck\ProductQuestions\Model\Status::STATUS_APPROVED
                 )->addVisibilityFilter(

@@ -62,11 +62,11 @@ class Product extends Column
     {
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as &$items) {
-                if ($items['entity_pk_value'] > 0) {
-                    $product = $this->productRepository->getById($items['entity_pk_value']);
-                    $items['entity_pk_value'] = $product->getName();
+                if ($items['product_id'] > 0) {
+                    $product = $this->productRepository->getById($items['product_id']);
+                    $items['product_id'] = $product->getName();
                 } else {
-                    $items['entity_pk_value'] = 'Guest';
+                    $items['product_id'] = 'Guest';
                 }
             }
         }

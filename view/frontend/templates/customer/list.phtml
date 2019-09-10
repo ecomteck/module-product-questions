@@ -39,7 +39,7 @@
                     <td data-th="<?php echo $block->escapeHtml(__('Created')) ?>" class="col date"><?php /* @escapeNotVerified */ echo $block->dateFormat($question->getQuestionCreatedAt()); ?></td>
                     <td data-th="<?php echo $block->escapeHtml(__('Product Name')) ?>" class="col item">
                         <strong class="product-name">
-                            <a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($question->getEntityPkValue()); ?>"><?php echo $block->escapeHtml($question->getProductName()); ?></a>
+                            <a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($question->getProductId()); ?>"><?php echo $block->escapeHtml($question->getProductName()); ?></a>
                         </strong>
                     </td>
                     <td data-th="<?php echo $block->escapeHtml(__('Question')) ?>" class="col description question-list">

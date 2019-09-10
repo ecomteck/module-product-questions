@@ -197,7 +197,7 @@ class Post extends \Magento\Framework\App\Action\Action
                 $data['question_author_name'] = $data['author_name'];
                 $data['question_author_email'] = $data['author_email'];
                 $data['question_visibility_id'] = Visibility::VISIBILITY_VISIBLE;
-                $data['entity_pk_value'] = $data['id'];
+                $data['product_id'] = $data['id'];
                 $data['question_created_by'] = $userCode;
                 $data['question_store_id'] = $this->storeManager->getStore()->getId();
                 $data['store_ids'] = [$this->storeManager->getStore()->getId()];
